@@ -1,8 +1,15 @@
+import { useState } from "react";
 import presby from "../assets/images/logo.png";
 import nupsg from "../assets/images/nupsg.jpeg";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
 
 const NavBar = () => {
+  const [isOpen, setOpen] = useState(false);
+
+  function handleClick() {
+    setOpen((prevState) => !prevState);
+  }
   return (
     <nav className="font-poppins flex justify-between items-center container px-8 md:px-12 mx-auto mt-6 mb-12 md:mb-8 ">
       <div className="flex gap-x-1 md:gap-3">
@@ -52,8 +59,12 @@ const NavBar = () => {
         >
           Login
         </a>
-        <span className="inline-block md:hidden">
-          <GiHamburgerMenu className="text-3xl text-color-1" />
+        <span className="inline-block md:hidden" onClick={handleClick}>
+          {isOpen ? (
+            <AiOutlineClose className="text-3xl text-color-1" />
+          ) : (
+            <GiHamburgerMenu className="text-3xl text-color-1" />
+          )}
         </span>
       </div>
     </nav>

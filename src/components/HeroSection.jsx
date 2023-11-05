@@ -65,9 +65,16 @@ const HeroSection = () => {
             Connect with us
           </p>
           <div className="flex justify-center gap-x-10 md:gap-x-3">
-            <FaFacebook className="w-5 h-5 md:w-8 md:h-8" />
-            <FaTwitter className="w-5 h-5 md:w-8 md:h-8" />
-            <BsInstagram className="w-5 h-5 md:w-8 md:h-8" />
+            <a href="https://facebook.com/nupsgknust">
+              <FaFacebook className="w-5 h-5 md:w-8 md:h-8" />
+            </a>
+            <a href="https://twitter.com/nupsgknust">
+              {" "}
+              <FaTwitter className="w-5 h-5 md:w-8 md:h-8" />
+            </a>
+            <a href="https://instagram.com/nupsgknust">
+              <BsInstagram className="w-5 h-5 md:w-8 md:h-8" />
+            </a>
           </div>
         </div>
       </div>

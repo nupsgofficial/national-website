@@ -1,4 +1,4 @@
-import woman from "../../public/images/woman.jpg";
+import woman from "../../../public/images/woman.jpg";
 import Alumni from "./Alumni";
 import Quiz from "./Quiz";
 const Personality = () => {

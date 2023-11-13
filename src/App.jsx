@@ -1,11 +1,11 @@
-import HeroSection from "./components/HeroSection";
+import HeroSection from "./components/home-page/HeroSection";
 import NavBar from "./components/NavBar";
-import CardSection from "./components/CardSection";
-import UpcomingEvents from "./components/UpcomingEvents";
-import News from "./components/News";
+import CardSection from "./components/home-page/CardSection";
+import UpcomingEvents from "./components/home-page/UpcomingEvents";
+import News from "./components/home-page/News";
 import Footer from "./components/Footer";
-import Personality from "./components/Personality";
-import Displays from "./components/Displays";
+import Personality from "./components/home-page/Personality";
+import Displays from "./components/home-page/Displays";
 
 const App = () => {
   return (

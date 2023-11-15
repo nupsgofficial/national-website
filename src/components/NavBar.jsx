@@ -4,6 +4,8 @@ import nupsg from "../assets/images/nupsg.jpeg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 
+import { NavLink } from "react-router-dom";
+
 const NavBar = () => {
   const [isOpen, setOpen] = useState(false);
 
@@ -28,28 +30,28 @@ const NavBar = () => {
 
         <ul className="md:flex gap-x-5 text-sm text-white hidden">
           <li>
-            <a href="#">Home</a>
+            <NavLink to={'/'}>Home</NavLink>
           </li>
           <li>
-            <a href="#">About Us</a>
+            <NavLink to={'/about'}>About Us</NavLink>
           </li>
           <li>
-            <a href="#">Branches</a>
+            <NavLink to={'/branches'}>Branches</NavLink>
           </li>
           <li>
-            <a href="#">News &amp; Events</a>
+            <NavLink to={'/news'}>News &amp; Events</NavLink>
           </li>
           <li>
-            <a href="#">Resources</a>
+            <NavLink to={'/resources'}>Resources</NavLink>
           </li>
           <li>
-            <a href="#">Committee</a>
+            <NavLink to={'/committee'}>Committee</NavLink>
           </li>
           <li>
-            <a href="#">Contact Us</a>
+            <NavLink to={'/contact'}>Contact Us</NavLink>
           </li>
           <li>
-            <a href="#">More</a>
+            <NavLink to={'/more'}>More</NavLink>
           </li>
         </ul>
 

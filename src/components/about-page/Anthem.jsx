@@ -7,7 +7,7 @@ const Anthem = () => {
             <h2> nups-g anthem</h2>
          </div>
          {/* text */}
-         <div className="w-[30%] mx-auto space-y-8 leading-loose">
+         <div className="md:w-[30%] md:mx-auto space-y-8 leading-loose">
             <p>For me to live is Christ,
 And to die is gain is the watchword.
 Presby Students' Union, a challenge is to your Faith.

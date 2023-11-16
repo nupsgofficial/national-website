@@ -11,10 +11,11 @@ const About = () => {
         let past = [{image:'img',name:'Mr. Name Goes here',position:'patron',id:1},{image:'img',name:'Mr. Name Goes here',position:'patron',id:2},{image:'img',name:'Mr. Name Goes here',position:'patron',id:3},{image:'img',name:'Mr. Name Goes here',position:'patron',id:4},{image:'img',name:'Mr. Name Goes here',position:'patron',id:5},{image:'img',name:'Mr. Name Goes here',position:'patron',id:6},{image:'img',name:'Mr. Name Goes here',position:'patron',id:7},{image:'img',name:'Mr. Name Goes here',position:'patron',id:8}];
 
     return ( 
-        <div className="bg-white">
+        <div className="bg-white w-screen">
             {/* <h2>WElCOME TO ABOUT PAGE</h2> */}
 
             <Herosection/>
+            
             <Secondsection/>
             <Anthem/>
             <Ourpatrons cards={patrons} title={'our patrons'} description={'Meet our cherished Patrons'}/>

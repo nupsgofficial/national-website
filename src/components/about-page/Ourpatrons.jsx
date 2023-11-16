@@ -6,7 +6,7 @@ const Ourpatrons = ({cards,title,description}) => {
         <div className="pb-12">
             {/* head */}
             <div className="mt-12 text-center">
-            <h2 className="text-primary uppercase text-5xl p-4">
+            <h2 className="text-primary uppercase text-3xl md:text-5xl p-4">
                 {title}
             </h2>
             <p className="pb-8">

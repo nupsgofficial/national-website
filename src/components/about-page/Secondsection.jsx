@@ -1,8 +1,8 @@
 const Secondsection = () => {
     return ( 
-        <div className="w-full md:flex px-32">
+        <div className="w-full md:flex md:px-32">
             {/* about the union */}
-            <div className="w-[140%] px-8 py-16">
+            <div className="md:w-[140%] px-8 py-16">
                 {/* header */}
                 <div className="header uppercase md:text-6xl text-primary font-medium text-center pb-12">
                     <h2>the union's history</h2>
@@ -58,7 +58,7 @@ const Secondsection = () => {
                 </div>
             </div>
             {/* mission,vission,theme etc. */}
-            <div className=" shadow  mt-40 h-[100%] space-y-8 w-[50%] pr-8">
+            <div className=" shadow mx-8 md:mx-0 md:mt-40 h-[100%] space-y-8 md:w-[50%] pr-8 mb-6 md:mb-0">
                 {/* mission */}
                 <div className="mission">
                    <div className="flex items-center space-x-4">

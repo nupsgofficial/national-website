@@ -72,30 +72,31 @@ const NavBar = () => {
         </div>
         {isOpen && (
           <ul className="md:flex gap-x-5 text-sm  text-color-1 font-poppins space-y-5 px-8 divide-y w-full bg-primary-1 py-5 absolute top-11 left-0 z-20">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">About Us</a>
-            </li>
-            <li>
-              <a href="#">Branches</a>
-            </li>
-            <li>
-              <a href="#">News &amp; Events</a>
-            </li>
-            <li>
-              <a href="#">Resources</a>
-            </li>
-            <li>
-              <a href="#">Committee</a>
-            </li>
-            <li>
-              <a href="#">Contact Us</a>
-            </li>
-            <li>
-              <a href="#">More</a>
-            </li>
+
+<li>
+            <NavLink to={'/'}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to={'/about'}>About Us</NavLink>
+          </li>
+          <li>
+            <NavLink to={'/branches'}>Branches</NavLink>
+          </li>
+          <li>
+            <NavLink to={'/news'}>News &amp; Events</NavLink>
+          </li>
+          <li>
+            <NavLink to={'/resources'}>Resources</NavLink>
+          </li>
+          <li>
+            <NavLink to={'/committee'}>Committee</NavLink>
+          </li>
+          <li>
+            <NavLink to={'/contact'}>Contact Us</NavLink>
+          </li>
+          <li>
+            <NavLink to={'/more'}>More</NavLink>
+          </li>
           </ul>
         )}
       </nav>

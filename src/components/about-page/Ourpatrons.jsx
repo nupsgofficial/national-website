@@ -1,35 +1,20 @@
-const Ourpatrons = () => {
-      let cards=[{image:'img',name:'Mr. Name Goes here',position:'patron',id:1},{image:'img',name:'Mr. Name Goes here',position:'patron',id:2},{image:'img',name:'Mr. Name Goes here',position:'patron',id:3},{image:'img',name:'Mr. Name Goes here',position:'patron',id:4},{image:'img',name:'Mr. Name Goes here',position:'patron',id:5},{image:'img',name:'Mr. Name Goes here',position:'patron',id:6}]
+import Card from "./Executivecard";
+
+const Ourpatrons = ({cards,title,description}) => {
 
     return ( 
-        <div className="">
+        <div className="pb-12">
             {/* head */}
-            <div className="">
-            <h2>our patrons</h2>
-            <p>Meet our cherished Patrons</p>
+            <div className="mt-12 text-center">
+            <h2 className="text-primary uppercase text-5xl p-4">
+                {title}
+            </h2>
+            <p className="pb-8">
+                {description}
+            </p>
             </div>
             {/* cards */}
-            <div className="card  bg-green-200 flex ">
-                {
-                    cards.map((card)=>(
-                        // container
-                        <div className="shadow bg-primary-1 w-[30%] " key={card.id}>
-                            {/* image */}
-                            <div className="w-20 h-20 rounded-full bg-red-100">
-                                <h2>{card.image}</h2></div>
-                            {/* name */}
-                            <div className="">
-                                {card.name}
-                            </div>
-                            {/* position */}
-                            <div className="">
-                                {card.position}
-                            </div>
-                        </div>
-                    ))
-                }
-
-            </div>
+            <Card cards={cards}/>
         </div>
      );
 }

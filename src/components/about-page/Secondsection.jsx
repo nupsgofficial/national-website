@@ -1,4 +1,9 @@
 const Secondsection = () => {
+        let color1 = 'primary';
+        let color2 = 'primary-1';
+        let color3='primary-2';
+        let color4='primary-3';
+
     return ( 
         <div className="w-full md:flex md:px-32">
             {/* about the union */}
@@ -57,16 +62,18 @@ const Secondsection = () => {
                     </p>
                 </div>
             </div>
+
+
             {/* mission,vission,theme etc. */}
-            <div className=" shadow mx-8 md:mx-0 md:mt-40 h-[100%] space-y-8 md:w-[50%] pr-8 mb-6 md:mb-0">
+            <div className= {` shadow mx-8 md:mx-0 md:mt-40 h-[100%] space-y-8 md:w-[50%] pr-8 mb-6 md:mb-0 ${color3}`}>
                 {/* mission */}
                 <div className="mission">
                    <div className="flex items-center space-x-4">
                     <div className="w-2 h-6 bg-primary-1"></div>
 
-                    <h2 className="text-primary text-xl font-medium py-2 uppercase">Mission</h2>
+                    <h2 className={` text-primary text-xl font-medium py-2 uppercase ${color1}`}>Mission</h2>
                    </div>
-                    <p className="pl-4">
+                    <p className={`pl-4 ${color1}`}>
                     The Union has also contributed to the University Community in imparting discipline, godliness and Christian values to her 
                     </p>
                 </div>
@@ -74,11 +81,11 @@ const Secondsection = () => {
                 <div className="">
 
                     <div className="flex items-center space-x-4">
-                    <div className="w-2 h-6 bg-primary-1"></div>
+                    <div className={`w-2 h-6 bg-primary-1 ${color1}`}></div>
 
-                    <h2 className="text-primary text-xl font-medium py-2 uppercase">vision</h2>
+                    <h2 className={`text-primary text-xl font-medium py-2 uppercase ${color1}`}>vision</h2>
                    </div>
-                    <p className="pl-4">
+                    <p className={`pl-4 ${color1}`}>
                     The Union has also contributed to the University Community in imparting discipline, godliness and Christian values to her
                     </p>
                 </div>
@@ -87,38 +94,38 @@ const Secondsection = () => {
                 <div className="">
 
                     <div className="flex items-center space-x-4">
-                    <div className="w-2 h-6 bg-primary-1"></div>
+                    <div className={`w-2 h-6 bg-primary-1 ${color1}`}></div>
 
-                    <h2 className="text-primary text-xl font-medium py-2 uppercase">pcg theme of the year</h2>
+                    <h2 className={`text-primary text-xl font-medium py-2 uppercase ${color1}`}>pcg theme of the year</h2>
                    </div>
 
-                    <p className="pl-4">Jesus Christ,the Alpha and Omega (Revelation 21:6)</p>
+                    <p className={`pl-4 ${color1}`}>Jesus Christ,the Alpha and Omega (Revelation 21:6)</p>
                 </div>
                 {/* youth theme */}
                 <div className="">
 
                     <div className="flex items-center space-x-4">
-                    <div className="w-2 h-6 bg-primary-1"></div>
+                    <div className={`w-2 h-6 bg-primary-1 ${color1}`}></div>
 
-                    <h2 className="text-primary text-xl font-medium py-2 uppercase">youth theme of the year</h2>
+                    <h2 className={`text-primary text-xl font-medium py-2 uppercase ${color1}`}>youth theme of the year</h2>
                    </div>
 
-                    <p className="pl-4">
+                    <p className={`pl-4 ${color1}`}>
                     Testifying of His glory and marvelous deeds (Psalm 96:3)
                     </p>
                 </div>
                 {/* semester focus */}
                 <div className="">
                 <div className="flex items-center space-x-4">
-                    <div className="w-2 h-6 bg-primary-1"></div>
+                    <div className={`w-2 h-6 bg-primary-1 ${color1}`}></div>
 
-                    <h2 className="text-primary text-xl font-medium py-2 uppercase">semester focus</h2>
+                    <h2 className={`text-primary text-xl font-medium py-2 uppercase ${color1}`}>semester focus</h2>
                    </div>
-                    <p className="pl-4">Empowered to walk in the power of the Holy Spirit (Acts 1:8)</p>
+                    <p className={`pl-4 ${color1}`}>Empowered to walk in the power of the Holy Spirit (Acts 1:8)</p>
 
                     {/* download */}
 
-                    <div className=" bg-primary-1 text-white p-2 uppercase w-[70%] ml-4 my-2">
+                    <div className={`bg-primary-1 text-white p-2 uppercase w-[70%] ml-4 my-2 ${color1}`}>
                         <a href="pdf">Download pdf</a>
                     </div>
                 </div>
@@ -126,12 +133,12 @@ const Secondsection = () => {
 
                 <div className="pb-4">
                 <div className="flex items-center space-x-4">
-                    <div className="w-2 h-6 bg-primary-1"></div>
+                    <div className={`w-2 h-6 bg-primary-1 ${color1}`}></div>
 
-                    <h2 className="text-primary text-xl font-medium py-2 uppercase">slogan</h2>
+                    <h2 className={`text-primary text-xl font-medium py-2 uppercase ${color1}`}>slogan</h2>
                    </div>
-                    <p className="pl-4">NUPS-G... For Christ</p>
-                    <p className="pl-4">For Christ... We Live</p>
+                    <p className={`pl-4 ${color1}`}>NUPS-G... For Christ</p>
+                    <p className={`pl-4 ${color1}`}>For Christ... We Live</p>
                 </div>
             </div>
         </div>

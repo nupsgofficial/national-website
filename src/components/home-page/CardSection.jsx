@@ -2,7 +2,7 @@ import { data } from "../../data/data";
 
 const CardSection = () => {
   return (
-    <>
+    <div className="">
       <h2 className="container text-color-1 text-center px-8 md:px-12 mx-auto font-poppins uppercase text-2xl  font-extrabold  mb-3">
         what we stand for
       </h2>
@@ -34,7 +34,7 @@ const CardSection = () => {
           );
         })}
       </section>
-    </>
+    </div>
   );
 };
 

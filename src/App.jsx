@@ -19,6 +19,9 @@ import About from "./components/about-page/About";
 import Branches from "./components/branches/Branches";
 
 import More from "./components/more/More";
+import More23 from "./components/more/More";
+import More3 from "./components/more/More";
+
 import Contact from "./components/contactUs/Contact"
 
 import Committee from "./components/committee/Committee";
@@ -42,7 +45,10 @@ const App = () => {
             <Route  path="/resources" element={<Resources/>}/>
             <Route  path="/committee" element={<Committee/>}/>
             <Route  path="/contact" element={<Contact/>}/>
-            <Route  path="/more" element={<More/>}/>
+            <Route  path="/more/*" element={<More/>}/>
+
+            <Route  path="/more23" element={<More23/>}/>
+            <Route  path="more3" element={<More3/>}/>
           </Routes>
          </div>
       <Footer />

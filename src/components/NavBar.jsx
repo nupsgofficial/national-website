@@ -5,13 +5,34 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 
 import { NavLink } from "react-router-dom";
+import Dropdown from "./Dropdown";
+
 
 const NavBar = () => {
   const [isOpen, setOpen] = useState(false);
 
+  let [isActive,setActive] = useState(true);
+
   function handleClick() {
     setOpen((prevState) => !prevState);
   }
+
+
+  function dropDown() {
+     setActive((prevState)=> !prevState);
+  }  
+
+  let show = isActive ? 'hidden':'flex';
+    
+  // dropdown menu options
+
+  // ----branches
+  let branches =[{name:"branch1",id:1},{name:"branch2",id:2},{name:"branch3",id:3},{name:"branch4",id:4}]
+
+  // -----more
+
+  let more =[{name:"branch1",id:1},{name:"branch2",id:2},{name:"branch3",id:3},{name:"branch4",id:4}]
+
   return (
     <>
       <nav className="font-poppins flex justify-between items-center container px-8 md:px-12 mx-auto mt-6 mb-12 md:mb-8  relative">
@@ -36,7 +57,19 @@ const NavBar = () => {
             <NavLink to={'/about'}>About Us</NavLink>
           </li>
           <li>
-            <NavLink to={'/branches'}>Branches</NavLink>
+            {/* has a dropdown menu */}
+            <NavLink to={'/branches'} >
+               <div className="relative">
+              {/* navlink */}
+              <div className="flex" 
+            onMouseOver={dropDown}  onClick={dropDown}>
+
+            Branches <div className=""> &#9660; </div></div>
+            {/* dropdown */}
+                <Dropdown active={isActive} display={show} option={branches}/>
+              </div> 
+            
+            </NavLink>
           </li>
           <li>
             <NavLink to={'/news'}>News &amp; Events</NavLink>
@@ -51,7 +84,21 @@ const NavBar = () => {
             <NavLink to={'/contact'}>Contact Us</NavLink>
           </li>
           <li>
-            <NavLink to={'/more'}>More</NavLink>
+            {/* <NavLink to={'/more'}>More</NavLink> */}
+
+            {/* has a dropdown menu */}
+            <NavLink to={'/branches'} >
+               <div className="relative">
+              {/* navlink */}
+              <div className="flex" 
+            onMouseOver={dropDown}  onClick={dropDown}>
+
+            More <div className=""> &#9660; </div></div>
+            {/* dropdown */}
+                <Dropdown active={isActive} display={show} option={more}/>
+              </div> 
+            
+            </NavLink>
           </li>
         </ul>
 

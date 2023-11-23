@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState,useRef,useEffect } from "react";
 import presby from "../assets/images/logo.png";
 import nupsg from "../assets/images/nupsg.jpeg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 
 import { NavLink } from "react-router-dom";
-import Dropdown from "./Dropdown";
+
 
 
 const NavBar = () => {
@@ -34,11 +34,38 @@ const NavBar = () => {
   // dropdown menu options
 
   // ----branches
-  let branches =[{name:"branch1",id:1},{name:"branch2",id:2},{name:"branch3",id:3},{name:"branch4",id:4}]
+  let branches =[{name:"branch1",id:1,link:'/branch'},{name:"branch2",id:2,link:'/branch'},{name:"branch3",id:3,link:'/branch'},{name:"branch4",id:4,link:'/branch'}]
 
   // -----more
 
-  let more =[{name:"more1",id:1},{name:"more2",id:2},{name:"more3",id:3}]
+  let more =[{name:"more1",id:1,link:'/more'},{name:"more",id:2,link:'/more'},{name:"more",id:3,link:'/more'}]
+
+
+  // refs
+
+  let menuref = useRef();
+  let linkref =useRef();
+
+  // close dropdown
+
+  useEffect(()=>{
+    let handler= (e)=>{
+      if (!menuref.current.contains(e.target) || !linkref.current.contains(e.target)){
+        setActive(true);
+        setMore(true);
+      }
+    }
+
+    document.addEventListener('mousedown',handler);
+
+    return()=>{
+      document.removeEventListener('mousedown',handler);
+    }
+  },[])
+  
+
+
+
 
   return (
     <>
@@ -64,25 +91,44 @@ const NavBar = () => {
             <NavLink to={'/about'}>About Us</NavLink>
           </li>
           <li>
+
             {/* has a dropdown menu */}
-            <NavLink to={'/branches'} >
+
+            {/* ----branches */}
+
+            <div ref={linkref}  className="cursor-pointer">
+
                <div className="relative">
               {/* navlink */}
-              <div className="flex" id="1"
-            onMouseOver={dropDown} 
+              <div className="flex" id="1" 
             
-            onClick={dropDown}
+            onClick={dropDown} ref={linkref}
             >
 
             Branches <div className=""> &#9660; </div></div>
             {/* dropdown */}
 
-           <Dropdown active={isActive} display={show} option={branches}/>
+
+              <div className={`bg-primary-2 absolute w-[5rem] ${show} flex flex-col  text-md  `} ref={linkref} >
+
+             {branches.map((branch)=>(
+                <div className="pl-2 border-b-2 border-primary-3 hover:bg-primary py-1 cursor-pointer" key={branch.id} >
+
+                  {/* will be changed to a navlink */}
+                  
+                  <NavLink to={`/branch/${branch.id}`}   >
+                  <h2 className="capitalize">{branch.name}</h2>
+                  </NavLink>
+                  
+                </div>
+             ))}
+            </div>
               
 
             </div>
-            </NavLink>
+            </div>
           </li>
+
           <li>
             <NavLink to={'/news'}>News &amp; Events</NavLink>
           </li>
@@ -99,21 +145,39 @@ const NavBar = () => {
             {/* <NavLink to={'/more'}>More</NavLink> */}
 
             {/* has a dropdown menu */}
-            <NavLink to={'/branches'} >
+
+            {/* --------more  */}
+            <div className="cursor-pointer" ref={linkref}   >
                <div className="relative">
               {/* navlink */}
               <div className="flex" id="2"
-            onMouseOver={showMore} 
              onClick={showMore}
-
+                
              >
 
             More <div className=""> &#9660; </div></div>
             {/* dropdown */}
-                <Dropdown active={isActive} display={display} option={more}/>
+
+
+
+              <div className={`bg-primary-2 absolute w-[5rem] ${display} flex flex-col  text-md  `} ref={menuref} >
+             {more.map((branch)=>(
+                <div className="pl-2 border-b-2 border-primary-3 hover:bg-primary py-1 cursor-pointer" key={branch.id}>
+
+                  {/* will be changed to a navlink */}
+                  
+                  <NavLink to={`/more/${branch.id}`} onClick={showMore} >
+                  <h2 className="capitalize">{branch.name}</h2>
+                  </NavLink>
+                  
+                </div>
+             ))}
+            </div>
+
+
               </div> 
             
-            </NavLink>
+            </div>
           </li>
         </ul>
 

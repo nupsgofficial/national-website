@@ -19,8 +19,7 @@ import About from "./components/about-page/About";
 import Branches from "./components/branches/Branches";
 
 import More from "./components/more/More";
-import More23 from "./components/more/More";
-import More3 from "./components/more/More";
+
 
 import Contact from "./components/contactUs/Contact"
 
@@ -29,6 +28,9 @@ import Committee from "./components/committee/Committee";
 import Resources from "./components/resources/Resources";
 
 import Newsandevents from "./components/newsandevents/Newsandevents";
+import Branchesecond from "./components/branches/Branchesecond";
+import Branchesthird from "./components/branches/Branchesthird";
+import Branchesfourth from "./components/branches/Branchesfourth";
 
 
 const App = () => {
@@ -42,15 +44,20 @@ const App = () => {
           <Routes>
             <Route exact path="/" element={<Home/>}/>
             <Route  path="/about" element={<About/>}/>
-            <Route  path="/branches" element={<Branches/>}/>
+
+
+            {/* branches */}
+            <Route exact path="/branch/:id" element={<Branches/>}/>
+
+
             <Route  path="/news" element={<Newsandevents/>}/>
             <Route  path="/resources" element={<Resources/>}/>
             <Route  path="/committee" element={<Committee/>}/>
             <Route  path="/contact" element={<Contact/>}/>
-            <Route  path="/more/*" element={<More/>}/>
 
-            <Route  path="/more23" element={<More23/>}/>
-            <Route  path="more3" element={<More3/>}/>
+            <Route  path="/more/:id" element={<More/>}/>
+
+          
           </Routes>
          </div>
       <Footer />

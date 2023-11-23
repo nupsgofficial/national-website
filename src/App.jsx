@@ -1,11 +1,7 @@
-import HeroSection from "./components/home-page/HeroSection";
+
 import NavBar from "./components/NavBar";
-import CardSection from "./components/home-page/CardSection";
-import UpcomingEvents from "./components/home-page/UpcomingEvents";
-import News from "./components/home-page/News";
 import Footer from "./components/Footer";
-import Personality from "./components/home-page/Personality";
-import Displays from "./components/home-page/Displays";
+
 
 
 
@@ -28,14 +24,19 @@ import Committee from "./components/committee/Committee";
 import Resources from "./components/resources/Resources";
 
 import Newsandevents from "./components/newsandevents/Newsandevents";
-import Branchesecond from "./components/branches/Branchesecond";
-import Branchesthird from "./components/branches/Branchesthird";
-import Branchesfourth from "./components/branches/Branchesfourth";
+import { useState } from "react";
 
+// const [isclose,setclose]= useState(100);
+
+// let handler = ()=>
+//   setclose(50000);
+
+// console.log(isclose);
 
 const App = () => {
+  
   return (
-    <>
+    <div  >
       <Router>
           <header>
             <NavBar />
@@ -62,7 +63,7 @@ const App = () => {
          </div>
       <Footer />
       </Router>
-    </>
+    </div>
   );
 };
 

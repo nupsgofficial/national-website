@@ -1,12 +1,22 @@
 import { useParams } from "react-router-dom";
 
+// pages
+
+import Local from "./Local";
+import Accra from "./Accra";
+import National from "./National";
 
 const Branches = () => {
-
     const{id}=useParams();
+
+    let arr =[<Local/>,<National/>,<Accra/>];
+
     return ( 
         <div className="text-white text-5xl">
-            <h2>WElCOME TO BRANCHES PAGE-1 {id} </h2>
+            <div className="">
+                {arr[id]}
+            </div>
+            
         </div>
      );
 }

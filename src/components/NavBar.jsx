@@ -34,34 +34,17 @@ const NavBar = () => {
   // dropdown menu options
 
   // ----branches
-  let branches =[{name:"branch1",id:1,link:'/branch'},{name:"branch2",id:2,link:'/branch'},{name:"branch3",id:3,link:'/branch'},{name:"branch4",id:4,link:'/branch'}]
+  let branches =[{name:"Local",id:0,link:'/branch'},{name:"National",id:1,link:'/branch'},{name:"Accra",id:2,link:'/branch'}]
 
   // -----more
 
-  let more =[{name:"more1",id:1,link:'/more'},{name:"more",id:2,link:'/more'},{name:"more",id:3,link:'/more'}]
+  let more =[{name:"Personality",id:0,link:'/more'},{name:"Quiz",id:1,link:'/more'},{name:"Contact",id:2,link:'/more'}]
 
 
   // refs
 
   let menuref = useRef();
   let linkref =useRef();
-
-  // close dropdown
-
-  useEffect(()=>{
-    let handler= (e)=>{
-      if (!menuref.current.contains(e.target) || !linkref.current.contains(e.target)){
-        setActive(true);
-        setMore(true);
-      }
-    }
-
-    document.addEventListener('mousedown',handler);
-
-    return()=>{
-      document.removeEventListener('mousedown',handler);
-    }
-  },[])
   
 
 
@@ -96,28 +79,28 @@ const NavBar = () => {
 
             {/* ----branches */}
 
-            <div ref={linkref}  className="cursor-pointer">
+            <div ref={menuref}  className="cursor-pointer">
 
-               <div className="relative">
+               <div className="relative" ref={menuref}>
               {/* navlink */}
               <div className="flex" id="1" 
             
-            onClick={dropDown} ref={linkref}
+            onClick={dropDown} 
             >
 
             Branches <div className=""> &#9660; </div></div>
             {/* dropdown */}
 
 
-              <div className={`bg-primary-2 absolute w-[5rem] ${show} flex flex-col  text-md  `} ref={linkref} >
+              <div className={`bg-primary-2 absolute w-[5rem] ${show} flex flex-col  text-md  `}  >
 
              {branches.map((branch)=>(
                 <div className="pl-2 border-b-2 border-primary-3 hover:bg-primary py-1 cursor-pointer" key={branch.id} >
 
-                  {/* will be changed to a navlink */}
                   
-                  <NavLink to={`/branch/${branch.id}`}   >
-                  <h2 className="capitalize">{branch.name}</h2>
+                  
+                  <NavLink to={`/branch/${branch.id}`} onClick={dropDown}  >
+                  <h2 className="capitalize w-full">{branch.name}</h2>
                   </NavLink>
                   
                 </div>
@@ -160,14 +143,14 @@ const NavBar = () => {
 
 
 
-              <div className={`bg-primary-2 absolute w-[5rem] ${display} flex flex-col  text-md  `} ref={menuref} >
+              <div className={`bg-primary-2 absolute w-[6rem] ${display} flex flex-col  text-md  `} ref={menuref} >
              {more.map((branch)=>(
                 <div className="pl-2 border-b-2 border-primary-3 hover:bg-primary py-1 cursor-pointer" key={branch.id}>
 
                   {/* will be changed to a navlink */}
                   
                   <NavLink to={`/more/${branch.id}`} onClick={showMore} >
-                  <h2 className="capitalize">{branch.name}</h2>
+                  <h2 className="capitalize w-full">{branch.name}</h2>
                   </NavLink>
                   
                 </div>

@@ -1,15 +1,27 @@
 import Easynav from "../Easynav";
-import { NavLink,useParams } from "react-router-dom";
+import { NavLink,useLocation,useParams } from "react-router-dom";
 
+// pages
 
+import Personality from './Personality';
+import Quiz from './Quiz';
+
+import Contact from './Contact';
 
 const More = () => {
 
     const{id}=useParams();
 
+    
+
+    let arr = [<Personality/>,<Quiz/>,<Contact/> ];
+
     return ( 
         <div className="text-white text-5xl">
-            <h2>WElCOME TO More PAGE-1 {id} </h2>
+            
+            <div className="">
+                {arr[id]}
+            </div>
         </div>
      );
 }

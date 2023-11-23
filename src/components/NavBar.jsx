@@ -13,16 +13,23 @@ const NavBar = () => {
 
   let [isActive,setActive] = useState(true);
 
+  let [isMore,setMore] = useState(true);
+
   function handleClick() {
     setOpen((prevState) => !prevState);
   }
 
-
   function dropDown() {
-     setActive((prevState)=> !prevState);
+     setActive((prevState)=> !prevState);    
   }  
+   
+  function showMore() {
+    setMore((prevState)=> !prevState);    
+ }  
 
   let show = isActive ? 'hidden':'flex';
+
+  let display = isMore ? 'hidden':'flex';
     
   // dropdown menu options
 
@@ -31,11 +38,11 @@ const NavBar = () => {
 
   // -----more
 
-  let more =[{name:"branch1",id:1},{name:"branch2",id:2},{name:"branch3",id:3},{name:"branch4",id:4}]
+  let more =[{name:"more1",id:1},{name:"more2",id:2},{name:"more3",id:3}]
 
   return (
     <>
-      <nav className="font-poppins flex justify-between items-center container px-8 md:px-12 mx-auto mt-6 mb-12 md:mb-8  relative">
+      <nav className="font-poppins flex justify-between items-center container px-8 md:px-12 mx-auto mt-6 mb-12 md:mb-8  relative" >
         <div className="flex gap-x-1 md:gap-3">
           <figure className="w-10 h-10 md:w-10 md:h-10">
             <a href="#">
@@ -61,14 +68,19 @@ const NavBar = () => {
             <NavLink to={'/branches'} >
                <div className="relative">
               {/* navlink */}
-              <div className="flex" 
-            onMouseOver={dropDown}  onClick={dropDown}>
+              <div className="flex" id="1"
+            onMouseOver={dropDown} 
+            
+            onClick={dropDown}
+            >
 
             Branches <div className=""> &#9660; </div></div>
             {/* dropdown */}
-                <Dropdown active={isActive} display={show} option={branches}/>
-              </div> 
-            
+
+           <Dropdown active={isActive} display={show} option={branches}/>
+              
+
+            </div>
             </NavLink>
           </li>
           <li>
@@ -90,12 +102,15 @@ const NavBar = () => {
             <NavLink to={'/branches'} >
                <div className="relative">
               {/* navlink */}
-              <div className="flex" 
-            onMouseOver={dropDown}  onClick={dropDown}>
+              <div className="flex" id="2"
+            onMouseOver={showMore} 
+             onClick={showMore}
+
+             >
 
             More <div className=""> &#9660; </div></div>
             {/* dropdown */}
-                <Dropdown active={isActive} display={show} option={more}/>
+                <Dropdown active={isActive} display={display} option={more}/>
               </div> 
             
             </NavLink>

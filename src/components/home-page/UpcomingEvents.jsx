@@ -1,4 +1,4 @@
-import { events } from "../data/upcoming";
+import { events } from "../../data/upcoming";
 
 const UpcomingEvents = () => {
   return (

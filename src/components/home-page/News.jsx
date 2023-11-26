@@ -1,4 +1,4 @@
-import { news } from "../data/news";
+import { news } from "../../data/news";
 
 const News = () => {
   return (

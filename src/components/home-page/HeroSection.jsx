@@ -1,5 +1,5 @@
-import Button from "./Button";
-import worship from "../assets/images/worship.jpg";
+import Button from "../Button";
+import worship from "../../assets/images/worship.jpg";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import presby from "../assets/images/logo.png";
-import nupsg from "../assets/images/nupsg.jpeg";
+import presby from "../assets/images/logo1.png";
+import nupsg from "../assets/images/nupsg.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 

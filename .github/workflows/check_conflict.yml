@@ -2,8 +2,8 @@ name: check_conflict
 
 on:
   push:
-    branches: [main]
-    
+    branches: [main, develop]
+
 jobs:
   conflict-check:
     runs-on: ubuntu-latest
@@ -12,11 +12,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Check for conflicts
+      - name: Check for conflicts on main branch
         run: |
-          git fetch origin
+          git fetch origin main
           git diff --name-only origin/main...HEAD > conflicts_main.txt
           if [ -s conflicts_main.txt ]; then
+            echo "Conflicts detected. Please resolve conflicts before opening a pull request."
+            exit 1
+          fi
+
+      - name: Check for conflicts on develop branch
+        run: |
+          git fetch origin develop
+          git diff --name-only origin/develop...HEAD > conflicts_dev.txt
+          if [ -s conflicts_dev.txt ]; then
             echo "Conflicts detected. Please resolve conflicts before opening a pull request."
             exit 1
           fi

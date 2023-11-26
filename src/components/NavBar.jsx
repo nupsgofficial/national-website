@@ -1,6 +1,6 @@
 import { useState } from "react";
-import presby from "../assets/images/pcglogo.png";
-import nupsg from "../assets/images/nupsglogo.png";
+import presby from "../assets/images/logo.png";
+import nupsg from "../assets/images/nupsg.jpeg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -14,12 +14,12 @@ const NavBar = () => {
     <>
       <nav className="font-poppins flex justify-between items-center container px-8 md:px-12 mx-auto mt-6 mb-12 md:mb-8  relative">
         <div className="flex gap-x-1 md:gap-3">
-          <figure className="w-12 h-12 md:w-14 md:h-14">
+          <figure className="w-10 h-10 md:w-10 md:h-10">
             <a href="#">
               <img src={presby} alt="presby" className="h-full w-full" />
             </a>
           </figure>
-          <figure className=" w-12 h-12 md:w-14 md:h-14">
+          <figure className=" w-8 h-10 md:w-10 md:h-10">
             <a href="#">
               <img src={nupsg} alt="nupsg" className="h-full w-full" />
             </a>

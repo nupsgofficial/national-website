@@ -48,8 +48,9 @@ const HeroSection = () => {
         <div className="font-poppins border-l-4 border-l-[#A386E7] mb-4">
           {/* bible verse */}
           <blockquote
-            className="text-xs pl-2 font-semibold "
+            className="text-[1rem] pl-2 font-semibold "
             cite="https://www.bible.com/bible/111/PHP.1.21.NIV"
+            title="https://www.bible.com/bible/111/PHP.1.21.NIV"
           >
             For to me, to live is Christ and to die is gain... <br />
             <span className="italic">Phil. 1:21</span>

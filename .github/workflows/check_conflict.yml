@@ -20,3 +20,11 @@ jobs:
             echo "Conflicts detected. Please resolve conflicts before opening a pull request."
             exit 1
           fi
+      - name: Check for conflicts on main branch
+        run: |
+          git fetch origin development
+          git diff --name-only origin/development...HEAD > conflicts_main.txt
+          if [ -s conflicts_dev.txt ]; then
+            echo "Conflicts detected. Please resolve conflicts before opening a pull request."
+            exit 1
+          fi

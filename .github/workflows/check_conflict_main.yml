@@ -2,7 +2,7 @@ name: check_conflict
 
 on:
   push:
-    branches: [main, development]
+    branches: [main]
 
 jobs:
   conflict-check:
@@ -17,15 +17,6 @@ jobs:
           git fetch origin main
           git diff --name-only origin/main...HEAD > conflicts_main.txt
           if [ -s conflicts_main.txt ]; then
-            echo "Conflicts detected. Please resolve conflicts before opening a pull request."
-            exit 1
-          fi
-      - name: Check for conflicts on main branch
-        run: |
-          git switch development
-          git fetch origin development
-          git diff --name-only origin/development...HEAD > conflicts_main.txt
-          if [ -s conflicts_dev.txt ]; then
             echo "Conflicts detected. Please resolve conflicts before opening a pull request."
             exit 1
           fi

@@ -1,30 +1,26 @@
-import Button from "./Button";
-import worship from "../assets/images/worship.jpg";
-import { FaFacebook } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { BsInstagram } from "react-icons/bs";
+import Button from './Button'
+import worship from '../assets/images/worship.jpg'
+import { FaFacebook } from 'react-icons/fa'
+import { FaTwitter } from 'react-icons/fa'
+import { BsInstagram } from 'react-icons/bs'
 const HeroSection = () => {
   return (
     <div className="container mx-auto px-8 md:px-12 mb-12 md:mb-8 text-color-1 ">
-      <section className="font-poppins   md:h-[400px] flex items-center">
+      <section className="font-poppins   md:h-[400px] flex justify-between items-center">
         <div className="space-y-8 md:w-1/2">
-          <h2 className="text-2xl text-center font-black md:text-left md:text-5xl md:font-bold uppercase ">
-            we welcome you <br />
-            to our website
+          <h2 className="text-2xl text-center font-black md:text-left md:text-6xl md:font-bold uppercase ">
+            we welcome you to our website
           </h2>
-          <p className="text-xs text-center md:text-left">
+          <p className="text-sm text-center md:text-left">
             This is the official website of NUPSG and we hope to get you
             connected as always. Stay connected for more updates and daily
             devotions
           </p>
           <div className="flex flex-col gap-y-2 items-center md:flex-row gap-x-5">
+            <Button label={'stay connected'} color={'bg-primary'}></Button>
             <Button
-              label={"sign up to stay connected"}
-              color={"bg-primary"}
-            ></Button>
-            <Button
-              label={"read our devotional guide"}
-              color={"bg-primary-3"}
+              label={'devotional guide'}
+              color={'bg-transparent'}
             ></Button>
           </div>
         </div>
@@ -66,20 +62,20 @@ const HeroSection = () => {
           </p>
           <div className="flex justify-center gap-x-10 md:gap-x-3">
             <a href="https://facebook.com/nupsgknust">
-              <FaFacebook className="w-5 h-5 md:w-8 md:h-8" />
+              <FaFacebook className="w-5 h-5 md:w-6 md:h-6 hover:animate-bounce duration-200" />
             </a>
             <a href="https://twitter.com/nupsgknust">
-              {" "}
-              <FaTwitter className="w-5 h-5 md:w-8 md:h-8" />
+              {' '}
+              <FaTwitter className="w-5 h-5 md:w-6  md:h-6 hover:animate-bounce duration-200" />
             </a>
             <a href="https://instagram.com/nupsgknust">
-              <BsInstagram className="w-5 h-5 md:w-8 md:h-8" />
+              <BsInstagram className="w-5 h-5 md:w-6  md:h-6 hover:animate-bounce duration-200" />
             </a>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HeroSection;
+export default HeroSection

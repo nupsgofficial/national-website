@@ -2,7 +2,7 @@ name: check_conflict
 
 on:
   push:
-    branches: [main]
+    branches: [main, development]
 
 jobs:
   conflict-check:
@@ -22,6 +22,7 @@ jobs:
           fi
       - name: Check for conflicts on main branch
         run: |
+          git switch development
           git fetch origin development
           git diff --name-only origin/development...HEAD > conflicts_main.txt
           if [ -s conflicts_dev.txt ]; then

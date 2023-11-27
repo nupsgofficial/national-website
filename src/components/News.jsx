@@ -7,7 +7,7 @@ const News = () => {
       <h3 className="uppercase text-color-1 text-3xl font-medium text-center py-4 mb-2">
         LATEST NEWS
       </h3>
-      <div className="grid grid-cols-2 text-white gap-5">
+      <div className="grid md:grid-cols-2 text-white gap-5">
         {news.map((item) => {
           return (
             <div

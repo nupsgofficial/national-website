@@ -14,15 +14,23 @@ const NavBar = () => {
   return (
     <>
       <nav className="sticky top-0 z-50 backdrop-blur-2xl py-3 font-poppins flex justify-between items-center px-8 md:px-24 mx-auto mt-6 mb-12 md:mb-8  relative w-screen">
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
           <figure className="">
             <a href="#">
-              <img src={presby} alt="presby" className="w-10 object-cover" />
+              <img
+                src={presby}
+                alt="presby"
+                className="w-8 md:w-10 object-cover"
+              />
             </a>
           </figure>
           <figure className=" ">
             <a href="#">
-              <img src={nupsg} alt="nupsg" className="w-10 object-cover" />
+              <img
+                src={nupsg}
+                alt="nupsg"
+                className="w-8 md:w-10 object-cover"
+              />
             </a>
           </figure>
         </div>

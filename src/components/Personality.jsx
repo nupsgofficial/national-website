@@ -9,10 +9,10 @@ const Personality = () => {
         <h3 className="uppercase text-xl font-semibold text-center">
           personality of the week
         </h3>
-        <div className="rounded-3xl h-[40rem] w-[35rem] space-y-3 shadow-xl text-center bg-primary-2 border border-gray-0600 relative ">
+        <div className="rounded-3xl md:h-[40rem] md:w-[35rem] space-y-3 shadow-xl text-center bg-primary-2 border border-gray-0600 relative ">
           <img
             src={woman}
-            className="w-full h-full object-cover object-bottom rounded-3xl"
+            className="w-full h-full object-cover object-top md:object-bottom rounded-3xl"
             alt=""
           />
           <div className="backdrop-filter backdrop-blur-lg bg-opacity-30 bg-white rounded-b-3xl rounded-t-none py-4 px-4 w-full absolute bottom-0 space-y-2">

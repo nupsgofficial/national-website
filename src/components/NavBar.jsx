@@ -8,7 +8,10 @@ import { NavLink } from "react-router-dom";
 
 
 
-const NavBar = () => {
+const NavBar = ({close}) => {
+
+  console.log(close);
+
   const [isOpen, setOpen] = useState(false);
 
   let [isActive,setActive] = useState(true);
@@ -27,9 +30,16 @@ const NavBar = () => {
     setMore((prevState)=> !prevState);    
  }  
 
-  let show = isActive ? 'hidden':'flex';
+ let display
+ let show;
 
-  let display = isMore ? 'hidden':'flex';
+    if (close){
+    show =  isActive  ? 'hidden':'flex';
+    display = isMore  ? 'hidden':'flex';
+  }else{
+      show = 'hidden';
+      display= 'hidden';
+  }
     
   // dropdown menu options
 

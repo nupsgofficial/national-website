@@ -6,3 +6,9 @@
 *{
     outline: 2px solid red
 } */
+
+@layer {
+  body {
+    overflow-x: hidden;
+  }
+}

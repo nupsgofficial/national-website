@@ -1,37 +1,11 @@
-
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
-
-
-
-
-// router-dom
-
-import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
-
-// pages
-import Home from "./components/home-page/Home";
-import About from "./components/about-page/About";
-import Branches from "./components/branches/Branches";
-
-import More from "./components/more/More";
-
-
-import Contact from "./components/contactUs/Contact"
-
-import Committee from "./components/committee/Committee";
-
-import Resources from "./components/resources/Resources";
-
-import Newsandevents from "./components/newsandevents/Newsandevents";
-import { useState } from "react";
-
-// const [isclose,setclose]= useState(100);
-
-// let handler = ()=>
-//   setclose(50000);
-
-// console.log(isclose);
+import HeroSection from './components/HeroSection'
+import NavBar from './components/NavBar'
+import CardSection from './components/CardSection'
+import UpcomingEvents from './components/UpcomingEvents'
+import News from './components/News'
+import Footer from './components/Footer'
+import Personality from './components/Personality'
+import Displays from './components/Displays'
 
 const App = () => {
   
@@ -67,4 +41,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App

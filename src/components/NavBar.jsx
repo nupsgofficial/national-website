@@ -1,8 +1,9 @@
-import { useState,useRef,useEffect } from "react";
-import presby from "../assets/images/pcglogo.png";
-import nupsg from "../assets/images/nupsglogo.png";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineClose } from "react-icons/ai";
+import { useState,useRef,useEffect } from 'react'
+import presby from '../assets/images/pcglogo.png'
+import nupsg from '../assets/images/nupsglogo.png'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { AiOutlineClose } from 'react-icons/ai'
+import Button from './Button'
 
 import { NavLink } from "react-router-dom";
 
@@ -16,52 +17,28 @@ const NavBar = () => {
   let [isMore,setMore] = useState(true);
 
   function handleClick() {
-    setOpen((prevState) => !prevState);
+    setOpen((prevState) => !prevState)
   }
-
-  function dropDown() {
-     setActive((prevState)=> !prevState);    
-  }  
-   
-  function showMore() {
-    setMore((prevState)=> !prevState);    
- }  
-
-  let show = isActive ? 'hidden':'flex';
-
-  let display = isMore ? 'hidden':'flex';
-    
-  // dropdown menu options
-
-  // ----branches
-  let branches =[{name:"Local",id:0,link:'/branch'},{name:"National",id:1,link:'/branch'},{name:"Accra",id:2,link:'/branch'}]
-
-  // -----more
-
-  let more =[{name:"Personality",id:0,link:'/more'},{name:"Quiz",id:1,link:'/more'},{name:"Contact",id:2,link:'/more'}]
-
-
-  // refs
-
-  let menuref = useRef();
-  let linkref =useRef();
-  
-
-
-
-
   return (
     <>
-      <nav className="font-poppins flex justify-between items-center container px-8 md:px-12 mx-auto mt-6 mb-12 md:mb-8  relative" >
-        <div className="flex gap-x-1 md:gap-3">
-          <figure className="w-12 h-12 md:w-14 md:h-14">
+      <nav className="sticky top-0 z-50 backdrop-blur-2xl py-3 font-poppins flex justify-between items-center px-8 md:px-24 mx-auto mt-6 mb-12 md:mb-8  w-screen">
+        <div className="flex items-center gap-2">
+          <figure className="">
             <a href="#">
-              <img src={presby} alt="presby" className="h-full w-full" />
+              <img
+                src={presby}
+                alt="presby"
+                className="w-8 md:w-10 object-cover"
+              />
             </a>
           </figure>
-          <figure className=" w-12 h-12 md:w-14 md:h-14">
+          <figure className=" ">
             <a href="#">
-              <img src={nupsg} alt="nupsg" className="h-full w-full" />
+              <img
+                src={nupsg}
+                alt="nupsg"
+                className="w-8 md:w-10 object-cover"
+              />
             </a>
           </figure>
         </div>
@@ -165,12 +142,7 @@ const NavBar = () => {
         </ul>
 
         <div className="flex items-center space-x-2">
-          <a
-            href="#"
-            className="bg-primary text-sm md:text-base text-white uppercase px-4 py-1 md:px-6 md:py-2 rounded-full"
-          >
-            Login
-          </a>
+          <Button label={'login'} color={'bg-primary'} />
           <span className="inline-block md:hidden" onClick={handleClick}>
             {isOpen ? (
               <AiOutlineClose className="text-3xl text-color-1" />
@@ -210,7 +182,7 @@ const NavBar = () => {
         )}
       </nav>
     </>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

@@ -1,3 +1,5 @@
+import Button from './Button'
+
 const Alumni = () => {
   return (
     <section className="container mx-auto text-color-1  md:px-12 font-poppins  mb-8  ">
@@ -7,12 +9,10 @@ const Alumni = () => {
           improving gatherings during national services.
         </p>
 
-        <button className="uppercase shadow-lg  bg-primary px-5 py-2 rounded-full font-bold tracking-widest">
-          contact us
-        </button>
+        <Button label={'Contact us'} color={'bg-primary'} />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Alumni;
+export default Alumni

@@ -1,3 +1,5 @@
+import Button from './Button'
+
 const Footer = () => {
   return (
     <section className=" text-color-1 px-8 pt-8 pb-12 bg-[#191A2B] md:px-12 font-poppins  space-y-8 ">
@@ -15,16 +17,11 @@ const Footer = () => {
               type="email"
               name="email"
               id="email"
-              className="rounded-full w-full h-10  px-4 focus:outline-none md:text-sm"
-              placeholder="Email: example@gmail.com"
+              className="rounded-lg w-full h-12 text-black  px-4 focus:outline-none md:text-sm"
+              placeholder="example@gmail.com"
             />
           </label>
-          <button
-            type="submit"
-            className="uppercase block bg-[#6E49FF] w-full md:w-auto px-5 py-2 rounded-full font-semibold text-sm"
-          >
-            submit
-          </button>
+          <Button label={'Submit'} color={'bg-primary'} />
         </form>
       </div>
       <div className="border-t-2 pt-5 md:border-t-2 md:grid grid-cols-3 gap-x-5 justify-center md:pt-8 space-y-6 md:space-y-0">
@@ -68,7 +65,7 @@ const Footer = () => {
         </div> */}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

@@ -1,4 +1,9 @@
+<<<<<<< HEAD:src/components/home-page/CardSection.jsx
 import { data } from "../../data/data";
+=======
+import { data } from '../data/data'
+import Button from './Button'
+>>>>>>> main:src/components/CardSection.jsx
 
 const CardSection = () => {
   return (
@@ -26,16 +31,20 @@ const CardSection = () => {
               </h3>
               <p className=" text-sm px-5 pt-2 pb-5">{item.text}</p>
               <div className="pb-5">
-                <button className="uppercase  bg-primary px-5 py-2 rounded-full font-bold tracking-widest">
-                  learn more
-                </button>
+                <Button label={'Learn more'} color={'bg-primary'} />
               </div>
             </div>
-          );
+          )
         })}
       </section>
+<<<<<<< HEAD:src/components/home-page/CardSection.jsx
     </div>
   );
 };
+=======
+    </>
+  )
+}
+>>>>>>> main:src/components/CardSection.jsx
 
-export default CardSection;
+export default CardSection

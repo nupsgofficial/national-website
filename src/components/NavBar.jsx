@@ -31,13 +31,9 @@ const NavBar = ({close}) => {
     setMore((prevState)=> !prevState);    
  }  
 
- let display
- let show;
+  let show = isActive ? 'hidden':'flex';
 
-  
-    show =  isActive  ? 'hidden':'flex';
-    display = isMore  ? 'hidden':'flex';
- 
+  let display = isMore ? 'hidden':'flex';
     
   // dropdown menu options
 

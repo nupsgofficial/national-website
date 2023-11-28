@@ -34,13 +34,10 @@ const NavBar = ({close}) => {
  let display
  let show;
 
-    if (close){
+  
     show =  isActive  ? 'hidden':'flex';
     display = isMore  ? 'hidden':'flex';
-  }else{
-      show = 'hidden';
-      display= 'hidden';
-  }
+ 
     
   // dropdown menu options
 
@@ -102,7 +99,7 @@ const NavBar = ({close}) => {
 
                <div className="relative" ref={menuref}>
               {/* navlink */}
-              <div className="flex" id="1" 
+              <div className="flex" 
             
             onClick={dropDown} 
             >

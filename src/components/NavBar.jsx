@@ -1,15 +1,18 @@
-import { useState,useRef,useEffect } from 'react'
-import presby from '../assets/images/pcglogo.png'
-import nupsg from '../assets/images/nupsglogo.png'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { AiOutlineClose } from 'react-icons/ai'
-import Button from './Button'
+import { useState,useRef,useEffect } from "react";
+import presby from "../assets/images/pcglogo.png";
+import nupsg from "../assets/images/nupsglogo.png";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
+import Button from "./Button";
 
 import { NavLink } from "react-router-dom";
 
 
 
-const NavBar = () => {
+const NavBar = ({close}) => {
+
+  console.log(close);
+
   const [isOpen, setOpen] = useState(false);
 
   let [isActive,setActive] = useState(true);
@@ -17,12 +20,52 @@ const NavBar = () => {
   let [isMore,setMore] = useState(true);
 
   function handleClick() {
-    setOpen((prevState) => !prevState)
+    setOpen((prevState) => !prevState);
   }
+
+  function dropDown() {
+     setActive((prevState)=> !prevState);    
+  }  
+   
+  function showMore() {
+    setMore((prevState)=> !prevState);    
+ }  
+
+ let display
+ let show;
+
+    if (close){
+    show =  isActive  ? 'hidden':'flex';
+    display = isMore  ? 'hidden':'flex';
+  }else{
+      show = 'hidden';
+      display= 'hidden';
+  }
+    
+  // dropdown menu options
+
+  // ----branches
+  let branches =[{name:"Local",id:0,link:'/branch'},{name:"National",id:1,link:'/branch'},{name:"Accra",id:2,link:'/branch'}]
+
+  // -----more
+
+  let more =[{name:"Personality",id:0,link:'/more'},{name:"Quiz",id:1,link:'/more'},{name:"Contact",id:2,link:'/more'}]
+
+
+  // refs
+
+  let menuref = useRef();
+  let linkref =useRef();
+  
+
+
+
+
   return (
     <>
-      <nav className="sticky top-0 z-50 backdrop-blur-2xl py-3 font-poppins flex justify-between items-center px-8 md:px-24 mx-auto mt-6 mb-12 md:mb-8  w-screen">
-        <div className="flex items-center gap-2">
+      <nav className="sticky top-0 z-50 backdrop-blur-2xl py-3 font-poppins flex justify-between items-center px-8 md:px-24 mx-auto mt-6 mb-12 md:mb-8 w-screen
+      " >
+         <div className="flex items-center gap-2">
           <figure className="">
             <a href="#">
               <img
@@ -42,7 +85,6 @@ const NavBar = () => {
             </a>
           </figure>
         </div>
-
         <ul className="md:flex gap-x-5 text-sm text-white hidden">
           <li>
             <NavLink to={'/'}>Home</NavLink>
@@ -142,7 +184,8 @@ const NavBar = () => {
         </ul>
 
         <div className="flex items-center space-x-2">
-          <Button label={'login'} color={'bg-primary'} />
+        <Button label={'login'} color={'bg-primary'} />
+          
           <span className="inline-block md:hidden" onClick={handleClick}>
             {isOpen ? (
               <AiOutlineClose className="text-3xl text-color-1" />
@@ -182,7 +225,7 @@ const NavBar = () => {
         )}
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

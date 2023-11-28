@@ -1,16 +1,9 @@
-<<<<<<< HEAD:src/components/home-page/HeroSection.jsx
 import Button from "../Button";
 import worship from "../../assets/images/worship.jpg";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
-=======
-import Button from './Button'
-import worship from '../assets/images/worship.jpg'
-import { FaFacebook } from 'react-icons/fa'
-import { FaTwitter } from 'react-icons/fa'
-import { BsInstagram } from 'react-icons/bs'
->>>>>>> main:src/components/HeroSection.jsx
+
 const HeroSection = () => {
   return (
     <div className="container mx-auto px-8 md:px-12 mb-12 md:mb-8 text-color-1 ">

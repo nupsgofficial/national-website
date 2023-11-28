@@ -1,9 +1,6 @@
-<<<<<<< HEAD:src/components/home-page/CardSection.jsx
+
 import { data } from "../../data/data";
-=======
-import { data } from '../data/data'
-import Button from './Button'
->>>>>>> main:src/components/CardSection.jsx
+import Button from '../Button';
 
 const CardSection = () => {
   return (
@@ -37,14 +34,8 @@ const CardSection = () => {
           )
         })}
       </section>
-<<<<<<< HEAD:src/components/home-page/CardSection.jsx
     </div>
   );
 };
-=======
-    </>
-  )
-}
->>>>>>> main:src/components/CardSection.jsx
 
 export default CardSection

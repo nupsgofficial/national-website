@@ -1,13 +1,8 @@
-<<<<<<< HEAD:src/components/home-page/Personality.jsx
 import woman from "../../../public/images/woman.jpg";
 import Alumni from "./Alumni";
 import Quiz from "./Quiz";
-=======
-import woman from '../../public/images/woman.jpg'
-import Alumni from './Alumni'
-import Button from './Button'
-import Quiz from './Quiz'
->>>>>>> main:src/components/Personality.jsx
+import Button from "../Button";
+
 const Personality = () => {
   return (
     <section className=" px-8 md:px-12 font-poppins pb-8 space-y-8 bg-[#222036] text-color-1 py-8 md:grid grid-cols-2  ">

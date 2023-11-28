@@ -1,8 +1,4 @@
-<<<<<<< HEAD:src/components/home-page/UpcomingEvents.jsx
 import { events } from "../../data/upcoming";
-=======
-import { events } from '../data/upcoming'
->>>>>>> main:src/components/UpcomingEvents.jsx
 
 const UpcomingEvents = () => {
   return (

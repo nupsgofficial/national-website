@@ -1,9 +1,5 @@
-<<<<<<< HEAD:src/components/home-page/News.jsx
 import { news } from "../../data/news";
-=======
-import { news } from '../data/news'
-import Button from './Button'
->>>>>>> main:src/components/News.jsx
+import Button from '../Button'
 
 const News = () => {
   return (

@@ -26,19 +26,24 @@ import Resources from "./components/resources/Resources";
 import Newsandevents from "./components/newsandevents/Newsandevents";
 
 
-// const [isclose,setclose]= useState(100);
 
-// let handler = ()=>
-//   setclose(50000);
+
+const App = () => {
+
+  const [isclose,setclose]= useState(false);
+
+let handler = ()=>
+  setclose(true);
 
 // console.log(isclose);
-const App = () => {
+
+
   
   return (
-    <div  >
+    <div onMouseDown={handler} >
       <Router>
           <header>
-            <NavBar />
+            <NavBar close={isclose}/>
           </header>
          <div className="main">
           <Routes>

@@ -3,7 +3,7 @@ import Card from "./Executivecard";
 const Ourpatrons = ({cards,title,description}) => {
 
     return ( 
-        <div className="pb-12">
+        <div className="pb-12 font-poppins">
             {/* head */}
             <div className="mt-12 text-center">
             <h2 className="text-primary uppercase text-3xl md:text-5xl p-4">

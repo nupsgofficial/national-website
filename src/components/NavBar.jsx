@@ -104,7 +104,7 @@ const NavBar = ({close}) => {
             onClick={dropDown} 
             >
               <div className="">Branches</div>
-             <div className=""> <IoIosArrowDropdown /> </div></div>
+             <div className=""> <IoIosArrowDropdown size={'16'}/> </div></div>
             {/* dropdown */}
 
 
@@ -154,7 +154,7 @@ const NavBar = ({close}) => {
                 
              >
               <div className="">More</div>
-             <div className=""> <IoIosArrowDropdown /> </div></div>
+             <div className=""> <IoIosArrowDropdown size={'16'}/> </div></div>
             {/* dropdown */}
 
 
@@ -220,11 +220,11 @@ const NavBar = ({close}) => {
 onClick={dropDown} 
 >
 <div className="">Branches</div>
- <div className=""> <IoIosArrowDropdown /> </div></div>
+ <div className=""> <IoIosArrowDropdown size={'16'}/> </div></div>
 {/* dropdown */}
 
 
-  <div className={`bg-primary-2 absolute w-[5rem] ${show} flex flex-col  text-md  `}  >
+  <div className={`bg-primary-2  w-full ${show} flex flex-col  text-md  `}  >
 
  {branches.map((branch)=>(
     <div className="pl-2 border-b-2 border-primary-3 hover:bg-primary py-1 cursor-pointer" key={branch.id} >
@@ -274,12 +274,12 @@ onClick={dropDown}
                 
              >
               <div className="">More </div>
-            <div className=""> <IoIosArrowDropdown /> </div></div>
+            <div className=""> <IoIosArrowDropdown size={'16'}/> </div></div>
             {/* dropdown */}
 
 
 
-              <div className={`bg-primary-2 absolute w-[6rem] ${display} flex flex-col  text-md  `} ref={menuref} >
+              <div className={`bg-primary-2  w-full ${display} flex flex-col  text-md  `} ref={menuref} >
              {more.map((branch)=>(
                 <div className="pl-2 border-b-2 border-primary-3 hover:bg-primary py-1 cursor-pointer" key={branch.id}>
 

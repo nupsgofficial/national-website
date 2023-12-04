@@ -5,7 +5,7 @@ const Secondsection = () => {
         let color4='primary-3';
 
     return ( 
-        <div className="w-full md:flex md:px-32">
+        <div className="w-full font-poppins md:flex md:px-32">
             {/* about the union */}
             <div className="md:w-[140%] px-8 py-16">
                 {/* header */}

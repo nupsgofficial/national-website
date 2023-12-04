@@ -24,6 +24,7 @@ import Committee from "./components/committee/Committee";
 import Resources from "./components/resources/Resources";
 
 import Newsandevents from "./components/newsandevents/Newsandevents";
+import Form from "./components/signUpForm/Form";
 
 
 
@@ -62,7 +63,9 @@ let handler = ()=>
 
             <Route  path="/more/:id" element={<More/>}/>
 
-          
+          {/* button-link */}
+
+          <Route  path="/form" element={<Form/>}/>
           </Routes>
          </div>
       <Footer />

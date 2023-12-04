@@ -183,7 +183,7 @@ const NavBar = ({close}) => {
         {/* mobile view */}
 
         <div className="flex items-center space-x-2">
-        <Button label={'login'} color={'bg-primary'} />
+        <Button label={'login'} color={'bg-primary'} to={'/form'} />
           
           <span className="inline-block md:hidden" onClick={handleClick}>
             {isOpen ? (

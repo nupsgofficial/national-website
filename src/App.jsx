@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 
 // router-dom
 
-import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 
 // pages
 import Home from "./components/home-page/Home";

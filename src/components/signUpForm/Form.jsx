@@ -8,7 +8,6 @@ const Form = () => {
             <Herosection text={'Join us'}/>
             <Signup/>
             <Login/>
-            <h2>WElCOME TO signup PAGE</h2>
         </div>
      );
 }

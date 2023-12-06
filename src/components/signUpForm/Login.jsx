@@ -3,10 +3,30 @@ import { FaUser } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 import Button from "../Button";
+import Herosection from "../Herosection";
+import { useState } from "react";
 
 const Login = () => {
+         
+    let [formtype,setFormType]=useState(1);
+
+    
+    let pages =[{link:'/form',id:0,},{link:'/form',id:1,}];
+
+    
+
+    let login =()=>(
+        setFormType(1)
+    );
+
+    let register =()=>(
+        setFormType(0)
+    );
+
     return ( 
-        <div className="w-full font-poppins">
+       <div className="main">
+        {/* <Herosection text={'Join us'}/> */}
+<div className="w-full font-poppins">
             
             <div className=" md:w-[40rem] w-[90%] py-6 mx-auto shadow mt-12 my-12 rounded-lg p-4">
                 {/* logo */}
@@ -45,11 +65,21 @@ const Login = () => {
                 </div>
 
                 <div className=" flex justify-between my-4">
-                <Button color={'bg-primary'} label={'Login'}/>
-                <Button color={'bg-primary-1'} label={'Register'}/>
+                        <div className="" onClick={login}>
+                        <Button color={'bg-primary'} label={'Login'} to={`/form/${formtype}`}  />
+                        </div>
+
+                    
+                
+                    <div className=""  onClick={register}>
+                    <Button color={'bg-primary-1'} label={'Register'} to={`/form/${formtype}`}/>
+                    </div>
+            
+            
                 </div>
 
-                <NavLink><p className="text-primary-3">Forgotten Password</p></NavLink>
+
+                <NavLink to={`/form/${pages.id}`} ><p className="text-primary-3">Forgotten Password</p></NavLink>
 
             </form>
 
@@ -58,6 +88,8 @@ const Login = () => {
 
             </div>
         </div>
+
+       </div>
      );
 }
  

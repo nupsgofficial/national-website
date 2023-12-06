@@ -65,7 +65,9 @@ let handler = ()=>
 
           {/* button-link */}
 
-          <Route  path="/form" element={<Form/>}/>
+          <Route  path="/form/:id" element={<Form/>}/>
+
+
           </Routes>
          </div>
       <Footer />

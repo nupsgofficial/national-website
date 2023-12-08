@@ -4,10 +4,14 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import Button from "../Button";
 import Herosection from "../Herosection";
+import Select from "./Select";
+
+
 
 const Signup = () => {
 
     let [formtype,setFormType]=useState(1);
+
 
     
     let pages =[{link:'/form',id:0,},{link:'/form',id:1,}];
@@ -21,9 +25,14 @@ const Signup = () => {
     let register =()=>(
         setFormType(0)
     );
+
+    let schools=[{name:'knust',id:1},{name:'UG',id:2},{name:'UCC',id:3},{name:'central',id:4},{name:'teacher',id:5},{name:'shs',id:6},{name:'yale',id:7},{name:'new',id:8},{name:'ksb',id:9}];
+
+
     return ( 
         <div className="main">
                 {/* <Herosection text={'Join us'}/> */}
+                <Herosection text={'Join us'}/>
 <div className="w-full font-poppins">
             
             <div className=" md:w-[40rem] w-[90%] py-6 mx-auto shadow mt-12 my-12 rounded-lg p-4">
@@ -75,7 +84,8 @@ const Signup = () => {
                <div className="">
                 <div className="pb-2"> <h2>Gender</h2></div>
                 <div className=" flex gap-x-4">
-                    <div className="flex gap-x-1 items-center"> <input type="radio" name="gender"  /> <h2> Male</h2></div>
+                    <div className="flex gap-x-1 items-center"> 
+                    <input type="radio" className="text-primary" name="gender"  /> <h2> Male</h2></div>
                     <div className="flex gap-x-1 items-center"> <input type="radio" name="gender"  /> <h2> Female</h2></div>
                 </div>
     
@@ -126,26 +136,15 @@ const Signup = () => {
     
                             {/* residence */}
                 <div className="">
-                    <div className="">
-                        <select name="school" id=""> 
-                        <option value="">-- select school --</option>
-                        <option value="knust">Knust</option>
-                        <option value="UG">UG</option>
-                        </select>
-                    </div>
+                <Select data={schools}/>
                 </div>
     
                 {/* program */}
                 <div className="">
-                    <div className="">
-                        <select name="program" id="1"> 
-                        <option value="">-- select program --</option>
-                        <option value="pharmacy">pharmacy</option>
-                        <option value="nursing">nursing</option>
-                        </select>
-                    </div>
+                <Select data={schools}/>
                 </div>
                 </div>
+               
     
     
                 <div className=" flex justify-between my-4">

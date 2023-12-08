@@ -11,7 +11,7 @@ const Form = () => {
 
     return ( 
         <div className="bg-white font-poppins">
-            <Herosection text={'Join us'}/>
+            
            
             <div className="">
                 {arr[id]}

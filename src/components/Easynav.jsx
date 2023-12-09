@@ -14,7 +14,7 @@ const Easynav = () => {
 
 
         return(
-            <div className="capitalize" key={currentLocation}>
+            <div className="capitalize font-poppins" key={currentLocation}>
             <Link to={currentLink}>{currentLocation}</Link>
           </div>
         )

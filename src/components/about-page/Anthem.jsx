@@ -1,6 +1,6 @@
 const Anthem = () => {
     return ( 
-    <div className="w-full bg-primary-1 text-white p-16 text-center space-y-8">
+    <div className="w-full font-poppins bg-primary-1 text-white p-16 text-center space-y-8">
          {/* anthem */}
 
          <div className="text-3xl uppercase text-primary font-medium">

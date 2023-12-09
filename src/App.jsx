@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 
 // router-dom
 
-import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 
 // pages
 import Home from "./components/home-page/Home";
@@ -24,6 +24,7 @@ import Committee from "./components/committee/Committee";
 import Resources from "./components/resources/Resources";
 
 import Newsandevents from "./components/newsandevents/Newsandevents";
+import Form from "./components/signUpForm/Form";
 
 
 
@@ -62,7 +63,11 @@ let handler = ()=>
 
             <Route  path="/more/:id" element={<More/>}/>
 
-          
+          {/* button-link */}
+
+          <Route  path="/form/:id" element={<Form/>}/>
+
+
           </Routes>
          </div>
       <Footer />

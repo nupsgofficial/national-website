@@ -1,6 +1,6 @@
 const Card = ({cards}) => {
     return ( 
-        <div className="w-screen">
+        <div className="w-screen font-poppins">
             <div className="card md:px-56 px-4  grid flex md:grid-cols-4 gap-x-8 gap-y-12 ">
                 {
                     cards.map((card)=>(

@@ -1,5 +1,5 @@
 import Anthem from "./Anthem";
-import Herosection from "./Herosection";
+import Herosection from "../Herosection";
 import Ourpatrons from "./Ourpatrons";
 import Secondsection from "./Secondsection";
 
@@ -14,7 +14,7 @@ const About = () => {
         <div className="bg-white w-screen">
             {/* <h2>WElCOME TO ABOUT PAGE</h2> */}
 
-            <Herosection/>
+            <Herosection text={'About'}/>
             
             <Secondsection/>
             <Anthem/>

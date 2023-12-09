@@ -7,6 +7,9 @@ import Button from "./Button";
 
 import { NavLink } from "react-router-dom";
 
+// dropdown icon
+import { IoIosArrowDropdown } from "react-icons/io";
+
 
 
 const NavBar = ({close}) => {
@@ -78,7 +81,8 @@ const NavBar = ({close}) => {
             </a>
           </figure>
         </div>
-        <ul className="md:flex gap-x-5 text-sm text-white hidden">
+
+        <ul className="md:flex gap-x-12 text-sm text-white hidden">
           <li>
             <NavLink to={'/'}>Home</NavLink>
           </li>
@@ -95,24 +99,24 @@ const NavBar = ({close}) => {
 
                <div className="relative" ref={menuref}>
               {/* navlink */}
-              <div className="flex" 
+              <div className="flex items-center space-x-1" 
             
             onClick={dropDown} 
             >
-
-            Branches <div className=""> &#9660; </div></div>
+              <div className="">Branches</div>
+             <div className=""> <IoIosArrowDropdown size={'16'}/> </div></div>
             {/* dropdown */}
 
 
-              <div className={`bg-primary-2 absolute w-[5rem] ${show} flex flex-col  text-md  `}  >
+              <div className={`bg-primary-2 absolute w-[8rem] rounded-b-lg ${show} flex flex-col  text-md  `}  >
 
              {branches.map((branch)=>(
-                <div className="pl-2 border-b-2 border-primary-3 hover:bg-primary py-1 cursor-pointer" key={branch.id} >
+                <div className="pl-2 border-b-2 border-primary-3 hover:bg-primary last:rounded-b-xl py-1 cursor-pointer " key={branch.id} >
 
                   
                   
                   <NavLink to={`/branch/${branch.id}`} onClick={dropDown}  >
-                  <h2 className="capitalize w-full">{branch.name}</h2>
+                  <h2 className="capitalize w-full ">{branch.name}</h2>
                   </NavLink>
                   
                 </div>
@@ -145,12 +149,12 @@ const NavBar = ({close}) => {
             <div className="cursor-pointer" ref={linkref}   >
                <div className="relative">
               {/* navlink */}
-              <div className="flex" id="2"
+              <div className="flex items-center space-x-1 " id="2"
              onClick={showMore}
                 
              >
-
-            More <div className=""> &#9660; </div></div>
+              <div className="">More</div>
+             <div className=""> <IoIosArrowDropdown size={'16'}/> </div></div>
             {/* dropdown */}
 
 
@@ -176,8 +180,10 @@ const NavBar = ({close}) => {
           </li>
         </ul>
 
+        {/* mobile view */}
+
         <div className="flex items-center space-x-2">
-        <Button label={'login'} color={'bg-primary'} />
+        <Button label={'login'} color={'bg-primary'} to={'/form/1'} />
           
           <span className="inline-block md:hidden" onClick={handleClick}>
             {isOpen ? (
@@ -188,7 +194,7 @@ const NavBar = ({close}) => {
           </span>
         </div>
         {isOpen && (
-          <ul className="md:flex gap-x-5 text-sm  text-color-1 font-poppins space-y-5 px-8 divide-y w-full bg-primary-1 py-5 absolute top-11 left-0 z-20">
+          <ul className="md:flex gap-x-5 text-sm  text-color-1 font-poppins space-y-5 px-8 divide-y w-full bg-primary-1 py-5 absolute top-16 left-0 z-20">
 
 <li>
             <NavLink to={'/'}>Home</NavLink>
@@ -196,9 +202,48 @@ const NavBar = ({close}) => {
           <li>
             <NavLink to={'/about'}>About Us</NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to={'/branches'}>Branches</NavLink>
-          </li>
+          </li> */}
+             <li>
+
+{/* has a dropdown menu */}
+
+{/* ----branches */}
+
+<div ref={menuref}  className="cursor-pointer">
+
+   <div className="relative" ref={menuref}>
+  {/* navlink */}
+  <div className="flex items-center space-x-1" 
+
+onClick={dropDown} 
+>
+<div className="">Branches</div>
+ <div className=""> <IoIosArrowDropdown size={'16'}/> </div></div>
+{/* dropdown */}
+
+
+  <div className={`bg-primary-2  w-full ${show} flex flex-col  text-md  `}  >
+
+ {branches.map((branch)=>(
+    <div className="pl-2 border-b-2 border-primary-3 hover:bg-primary py-1 cursor-pointer" key={branch.id} >
+
+      
+      
+      <NavLink to={`/branch/${branch.id}`} onClick={dropDown}  >
+      <h2 className="capitalize w-full">{branch.name}</h2>
+      </NavLink>
+      
+    </div>
+ ))}
+</div>
+  
+
+</div>
+</div>
+</li>
+
           <li>
             <NavLink to={'/news'}>News &amp; Events</NavLink>
           </li>
@@ -211,8 +256,47 @@ const NavBar = ({close}) => {
           <li>
             <NavLink to={'/contact'}>Contact Us</NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to={'/more'}>More</NavLink>
+          </li> */}
+
+<li>
+            {/* <NavLink to={'/more'}>More</NavLink> */}
+
+            {/* has a dropdown menu */}
+
+            {/* --------more  */}
+            <div className="cursor-pointer" ref={linkref}   >
+               <div className="relative">
+              {/* navlink */}
+              <div className="flex items-center space-x-1" id="2"
+             onClick={showMore}
+                
+             >
+              <div className="">More </div>
+            <div className=""> <IoIosArrowDropdown size={'16'}/> </div></div>
+            {/* dropdown */}
+
+
+
+              <div className={`bg-primary-2  w-full ${display} flex flex-col  text-md  `} ref={menuref} >
+             {more.map((branch)=>(
+                <div className="pl-2 border-b-2 border-primary-3 hover:bg-primary py-1 cursor-pointer" key={branch.id}>
+
+                  {/* will be changed to a navlink */}
+                  
+                  <NavLink to={`/more/${branch.id}`} onClick={showMore} >
+                  <h2 className="capitalize w-full">{branch.name}</h2>
+                  </NavLink>
+                  
+                </div>
+             ))}
+            </div>
+
+
+              </div> 
+            
+            </div>
           </li>
           </ul>
         )}

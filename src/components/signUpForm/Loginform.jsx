@@ -14,7 +14,9 @@ const Loginform = ({signin}) => {
 
     let [show,setShow]=useState(false);
 
-    let isChecked =()=>{setShow(!show)};
+    let isChecked =(e)=>{setShow(!show)
+    console.log(e.target)
+    };
 
     let type = show? "text": "password";
 
@@ -78,10 +80,10 @@ const Loginform = ({signin}) => {
                 <input className="border-b-2 focus:border-b-primary outline-none duration-700 ease-in-out" type={type} name="password"  />
                 </div>
 
-                <div className="">
-                <input type="checkbox" onChange={isChecked} name="show"/>
+                <div className="" onClick={isChecked} >
+                <input type="checkbox" id="show"  onChange={(e)=>isChecked(e)} name="show"/>
                 {console.log(show)}
-                <label htmlFor="show">Show Password</label>
+                <label  id="show" htmlFor="show">Show Password</label>
                 </div>
 
                 <div className=" flex justify-between my-4">

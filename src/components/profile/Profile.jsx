@@ -1,11 +1,17 @@
 import Herosection from "../Herosection";
+import Page from "./Page";
+import Sidebar from "./Sidebar";
 
 const Profile = () => {
     return ( 
-        <div className="">
+        <div className="w-full">
             <Herosection text={'Welcome'}/>
-        <div className="text-5xl mt-32 pb-32">
-            welcome to your profile
+        <div className=" pt-24  ">
+            
+           <div className="flex w-full gap-x-28">
+           <Sidebar/>
+            <Page/>
+           </div>
         </div>
         </div>
      );

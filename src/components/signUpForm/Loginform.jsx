@@ -6,10 +6,22 @@ import Button from "../Button";
 import Herosection from "../Herosection";
 import { useState } from "react";
 import Profile from "../profile/Profile";
+import Submit from "../Submit";
 
 const Loginform = ({signin}) => {
          
     let [formtype,setFormType]=useState(1);
+
+    let [show,setShow]=useState(false);
+
+    let isChecked =(e)=>{setShow(!show)
+    console.log(e.target)
+    };
+
+    let type = show? "text": "password";
+
+
+
 
     
     let pages =[{link:'/form',id:0,},{link:'/form',id:1,}];
@@ -53,7 +65,7 @@ const Loginform = ({signin}) => {
 
             {/* form */}
             <div className="">
-            <form className="flex flex-col space-y-4">
+            <form className="flex flex-col space-y-4" onSubmit={()=>signin(true)}>
                <div className="flex flex-col">
                <label htmlFor="email" className="text-primary-2 text-lg">
                     Email
@@ -65,17 +77,18 @@ const Loginform = ({signin}) => {
                 <label className="text-primary-2 text-lg" htmlFor="password">
                     Password
                 </label>
-                <input className="border-b-2 focus:border-b-primary outline-none duration-700 ease-in-out" type="password" name="password"  />
+                <input className="border-b-2 focus:border-b-primary outline-none duration-700 ease-in-out" type={type} name="password"  />
                 </div>
 
-                <div className="">
-                <input type="checkbox" name="show"/>
-                <label htmlFor="show">Show Password</label>
+                <div className="" onClick={isChecked} >
+                <input type="checkbox" id="show"  onChange={(e)=>isChecked(e)} name="show"/>
+                {console.log(show)}
+                <label  id="show" htmlFor="show">Show Password</label>
                 </div>
 
                 <div className=" flex justify-between my-4">
-                        <div className="" onClick={()=>signin(true)}>
-                        <Button color={'bg-primary'} label={'Login'} to={`/form/${formtype}`}  />
+                        <div className="" >
+                        <Submit label={'Login'} color={'bg-primary'}/>
                         </div>
 
                     

@@ -7,7 +7,7 @@ const Button = ({ label, color,to }) => {
 
     >
       <NavLink to={to}>
-        <input type="submit" value={label} />
+        {label}
          </NavLink>
       
     </button>
